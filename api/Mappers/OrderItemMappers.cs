@@ -23,7 +23,6 @@ namespace api.Mappers
         public static OrderItem ToOrderItemDtoFromOrder(this CreateOrderItemRequestDto orderItemDto)
         {
             return new OrderItem {
-                OrderId = orderItemDto.OrderId,
                 ProductId = orderItemDto.ProductId,
                 Quantity = orderItemDto.Quantity,
                 SubSum = orderItemDto.SubSum

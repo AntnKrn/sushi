@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6ia5iYGDraZ769sGI5JoyMmyyKbs2qEc2mSfXAqbnzTEikw2HFVk34y9iO+wm2DLoNWEhuAH/PEdPu+Wtb+3xQ==",
+  "dgSpecHash": "REt7bGw0qt5vIYXeeqxmr9onJNM9AG7YPsBnLBwEwtF36Y8X6rabgH2rDM+/FTh5jjpWRlKyjKXKnX4RLUG61g==",
   "success": true,
-  "projectFilePath": "/Users/tonya/Desktop/shop/api/api.csproj",
+  "projectFilePath": "/Users/tonya/Desktop/sushi/api/api.csproj",
   "expectedPackageFiles": [
     "/Users/tonya/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/tonya/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",

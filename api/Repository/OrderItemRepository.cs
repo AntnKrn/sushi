@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
+using api.Dtos.OrderItem;
 using api.Interfaces;
 using api.models;
 using Microsoft.EntityFrameworkCore;
@@ -19,11 +20,17 @@ namespace api.Repository
             _context = context;
         }
 
-        public async Task<OrderItem> CreateAsync(OrderItem orderItemModel)
+        public async Task<OrderItem> CreateAsync(CreateOrderItemRequestDto orderItemModel, int id)
         {
-            await _context.OrderItems.AddAsync(orderItemModel);
+            var existingOrderItem = new OrderItem() {
+                OrderId = id,
+                ProductId = orderItemModel.ProductId,
+                Quantity = orderItemModel.Quantity,
+                SubSum = orderItemModel.SubSum,
+            };
+            await _context.OrderItems.AddAsync(existingOrderItem);
             await _context.SaveChangesAsync();
-            return orderItemModel;
+            return existingOrderItem;
         }
 
         public async Task<List<OrderItem>> GetAllAsync()

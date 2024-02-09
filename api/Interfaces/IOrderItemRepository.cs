@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Dtos.OrderItem;
 using api.models;
 
 namespace api.Interfaces
@@ -12,7 +13,7 @@ namespace api.Interfaces
 
         Task<OrderItem?> GetByIDAsync(int id);
 
-        Task<OrderItem> CreateAsync(OrderItem orderItemModel);
+        Task<OrderItem> CreateAsync(CreateOrderItemRequestDto orderItemModel, int id);
 
         // Task<OrderItem?> UpdateAsync(int id, OrderItem orderItem);
 

@@ -4624,11 +4624,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tonya/Desktop/shop/api/api.csproj",
+      "projectUniqueName": "/Users/tonya/Desktop/sushi/api/api.csproj",
       "projectName": "api",
-      "projectPath": "/Users/tonya/Desktop/shop/api/api.csproj",
+      "projectPath": "/Users/tonya/Desktop/sushi/api/api.csproj",
       "packagesPath": "/Users/tonya/.nuget/packages/",
-      "outputPath": "/Users/tonya/Desktop/shop/api/obj/",
+      "outputPath": "/Users/tonya/Desktop/sushi/api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tonya/.nuget/NuGet/NuGet.Config"

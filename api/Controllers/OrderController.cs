@@ -19,10 +19,12 @@ namespace api.Controllers
     {
 
         private readonly IOrderRepository _orderRepo;
+        private readonly IOrderItemRepository _orderItemRepo;
 
-        public OrderController(IOrderRepository orderRepo)
+        public OrderController(IOrderRepository orderRepo, IOrderItemRepository orderItemRepo)
         {
             _orderRepo = orderRepo;
+            _orderItemRepo = orderItemRepo;
         }
 
         [HttpGet("{id}")]
@@ -57,24 +59,11 @@ namespace api.Controllers
 
             var orderItemsModel = orderDto.OrderItems;
 
-            foreach (var orderItem in orderItemsModel)
+            foreach (CreateOrderItemRequestDto orderItem in orderItemsModel)
             {
                 orderItem.ToOrderItemDtoFromOrder();
+                await _orderItemRepo.CreateAsync(orderItem, orderModel.Id);
             }
-
-            string json = JsonConvert.SerializeObject(orderItemsModel);
-            Console.WriteLine("+=++++++++++++++++++++++++++++++++");
-            Console.WriteLine("+=++++++++++++++++++++++++++++++++");
-            Console.WriteLine("+=++++++++++++++++++++++++++++++++");
-            Console.WriteLine("+=++++++++++++++++++++++++++++++++");
-            Console.WriteLine("+=++++++++++++++++++++++++++++++++");
-            Console.WriteLine(json);
-            Console.WriteLine("+=++++++++++++++++++++++++++++++++");
-            Console.WriteLine("+=++++++++++++++++++++++++++++++++");
-            Console.WriteLine("+=++++++++++++++++++++++++++++++++");
-            Console.WriteLine("+=++++++++++++++++++++++++++++++++");
-            Console.WriteLine("+=++++++++++++++++++++++++++++++++");
-
             return CreatedAtAction(nameof(GetById), new {id = orderModel.Id}, orderModel.ToOrderDto());
         }
 
