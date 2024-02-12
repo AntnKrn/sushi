@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Dtos.OrderItem;
 using api.Interfaces;
 using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
@@ -30,7 +31,7 @@ namespace api.Controllers
         }
         
         [HttpGet]
-        [Route("{id}")]
+        [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var orderItem = await _orderItemRepo.GetByIDAsync(id);
@@ -41,6 +42,34 @@ namespace api.Controllers
             }
 
             return Ok(orderItem.ToOrderItemDto());
+        }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateOrderItemRequestDto updateDto) 
+        {
+            var OrderItem = await _orderItemRepo.UpdateAsync(updateDto.ToOrderItemDtoFromUpdate(), id);
+
+            if(OrderItem == null) 
+            {
+                return NotFound("OrderItem not found");
+            }
+
+            return Ok(OrderItem.ToOrderItemDto());
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public async Task<IActionResult> Delete([FromRoute] int id)
+        {
+            var orderItem = await _orderItemRepo.DeleteAsync(id);
+
+            if(orderItem == null) 
+            {
+                return NotFound("order item not found");
+            }
+
+            return NoContent();
         }
     }
 }

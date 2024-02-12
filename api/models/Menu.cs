@@ -13,7 +13,7 @@ namespace api.models
         public string Name { get; set; } = string.Empty;
         public string Ingredients { get; set; } = string.Empty;
         public string Type { get; set; } = string.Empty;
-        [Column(TypeName = "decimal(3,2)")]
+        [Column(TypeName = "decimal(6,2)")]
         public decimal Price { get; set; }
     }
 }

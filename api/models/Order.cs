@@ -11,10 +11,10 @@ namespace api.models
     {
         public int Id { get; set; }
 
-        public int ClientId { get; set; }
+        public int? ClientId { get; set; }
 
         public DateTime Date { get; set; } = DateTime.Now;
-        [Column(TypeName=("decimal(3,2)"))]
+        [Column(TypeName="decimal(6,2)")]
         public decimal TotalPrice { get; set; } 
 
         public string Status { get; set; } = string.Empty;

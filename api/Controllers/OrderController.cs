@@ -27,7 +27,7 @@ namespace api.Controllers
             _orderItemRepo = orderItemRepo;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var order = await _orderRepo.GetByIDAsync(id);
@@ -61,14 +61,14 @@ namespace api.Controllers
 
             foreach (CreateOrderItemRequestDto orderItem in orderItemsModel)
             {
-                orderItem.ToOrderItemDtoFromOrder();
+                orderItem.ToOrderItemDtoFromCreateOrder();
                 await _orderItemRepo.CreateAsync(orderItem, orderModel.Id);
             }
             return CreatedAtAction(nameof(GetById), new {id = orderModel.Id}, orderModel.ToOrderDto());
         }
 
         [HttpPut]
-        [Route("{id}")]
+        [Route("{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, UpdateOrderRequestDto updateDto)
         {
             var orderModel = await _orderRepo.UpdateAsync(id, updateDto);
@@ -82,10 +82,10 @@ namespace api.Controllers
         }
 
         [HttpDelete]
-        [Route("{id}")]
+        [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
-            var order = await _orderRepo.GetByIDAsync(id);
+            var order = await _orderRepo.DeleteAsync(id);
 
             if(order == null)
             {

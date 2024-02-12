@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
 using api.Dtos.Menu;
+using api.Helpers.QueryObjects;
 using api.Interfaces;
 using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
@@ -24,18 +25,28 @@ namespace api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] MenuQueryObject query)
         {
-            var menu = await _menuRepo.GetAllAsync();
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var menu = await _menuRepo.GetAllAsync(query);
             
             var menuDto = menu.Select(s => s.ToMenuDto());
 
             return Ok(menuDto); //
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)  
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var menu = await _menuRepo.GetByIDAsync(id);
 
             if(menu == null)
@@ -49,6 +60,11 @@ namespace api.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateMenuRequestDto menuDto)
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
             var menuModel = menuDto.ToMenuFromCreateDto();
             await _menuRepo.CreateAsync(menuModel);
             // string json = JsonConvert.SerializeObject(menuModel);
@@ -57,9 +73,14 @@ namespace api.Controllers
         }
 
         [HttpPut]
-        [Route("{id}")]
+        [Route("{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateMenuRequestDto updateDto) 
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
             var menuModel = await _menuRepo.UpdateAsync(id, updateDto);
 
             if(menuModel == null) 
@@ -71,10 +92,15 @@ namespace api.Controllers
         }
 
         [HttpDelete]
-        [Route("{id}")]
+        [Route("{id:int}")]
 
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
             var menuModel = await _menuRepo.DeleteAsync(id);
 
 

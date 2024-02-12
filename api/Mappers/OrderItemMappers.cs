@@ -14,16 +14,25 @@ namespace api.Mappers
             return new OrderItemDto {
                 Id = orderItemModel.Id,
                 OrderId = orderItemModel.OrderId,
-                ProductId = orderItemModel.ProductId,
+                MenuId = orderItemModel.MenuId,
                 Quantity = orderItemModel.Quantity,
                 SubSum = orderItemModel.SubSum,
             };
         }
 
-        public static OrderItem ToOrderItemDtoFromOrder(this CreateOrderItemRequestDto orderItemDto)
+        public static OrderItem ToOrderItemDtoFromCreateOrder(this CreateOrderItemRequestDto orderItemDto)
         {
             return new OrderItem {
-                ProductId = orderItemDto.ProductId,
+                MenuId = orderItemDto.MenuId,
+                Quantity = orderItemDto.Quantity,
+                SubSum = orderItemDto.SubSum
+            };
+        }
+
+        public static OrderItem ToOrderItemDtoFromUpdate(this UpdateOrderItemRequestDto orderItemDto)
+        {
+            return new OrderItem {
+                MenuId = orderItemDto.MenuId,
                 Quantity = orderItemDto.Quantity,
                 SubSum = orderItemDto.SubSum
             };

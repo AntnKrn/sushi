@@ -6,6 +6,7 @@ using api.Data;
 using api.Dtos.OrderItem;
 using api.Interfaces;
 using api.models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace api.Repository
@@ -24,13 +25,28 @@ namespace api.Repository
         {
             var existingOrderItem = new OrderItem() {
                 OrderId = id,
-                ProductId = orderItemModel.ProductId,
+                MenuId = orderItemModel.MenuId,
                 Quantity = orderItemModel.Quantity,
                 SubSum = orderItemModel.SubSum,
             };
             await _context.OrderItems.AddAsync(existingOrderItem);
             await _context.SaveChangesAsync();
             return existingOrderItem;
+        }
+
+        public async Task<OrderItem?> DeleteAsync(int id)
+        {
+            var orderItem = await _context.OrderItems.FirstOrDefaultAsync(x => x.Id == id);
+
+            if(orderItem == null)
+            {
+                return null;
+            }
+
+            _context.OrderItems.Remove(orderItem);
+            await _context.SaveChangesAsync();
+
+            return orderItem;
         }
 
         public async Task<List<OrderItem>> GetAllAsync()
@@ -43,6 +59,22 @@ namespace api.Repository
             return await _context.OrderItems.FindAsync(id);
         }
 
-        
+        public async Task<OrderItem?> UpdateAsync(OrderItem orderItemModel, int id)
+        {
+            var existingOrderItem = await _context.OrderItems.FindAsync(id);
+
+            if(existingOrderItem == null)
+            {
+                return null;
+            }
+
+            existingOrderItem.MenuId = orderItemModel.MenuId;
+            existingOrderItem.Quantity = orderItemModel.Quantity;
+            existingOrderItem.SubSum = orderItemModel.SubSum;
+
+            await _context.SaveChangesAsync();
+
+            return existingOrderItem;
+        }
     }
 }

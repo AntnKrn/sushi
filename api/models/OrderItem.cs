@@ -12,9 +12,10 @@ namespace api.models
         public int Id { get; set; }
         public int? OrderId { get; set; }
         public Order? Order {get; set; }
-        public int ProductId { get; set; }
+        public int MenuId { get; set; }
+        public Menu? Menu { get; set; }
         public int Quantity { get; set; }
-        [Column(TypeName=("decimal(3,2)"))]
+        [Column(TypeName="decimal(6,2)")]
         public decimal SubSum { get; set; }
     }
 }

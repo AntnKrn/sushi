@@ -15,8 +15,8 @@ namespace api.Interfaces
 
         Task<OrderItem> CreateAsync(CreateOrderItemRequestDto orderItemModel, int id);
 
-        // Task<OrderItem?> UpdateAsync(int id, OrderItem orderItem);
+        Task<OrderItem?> UpdateAsync(OrderItem orderItemModel, int id);
 
-        // Task<OrderItem?> DeleteAsync(int id);
+        Task<OrderItem?> DeleteAsync(int id);
     }
 }
