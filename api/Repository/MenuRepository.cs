@@ -27,7 +27,18 @@ namespace api.Repository
                 menu = menu.Where(s => s.Type.Contains(query.Type)); 
             }
 
-            return await menu.ToListAsync();
+            if(!string.IsNullOrWhiteSpace(query.SortBy))
+            {
+                if(query.SortBy.Equals("Price", StringComparison.OrdinalIgnoreCase))
+                {
+                    menu = query.IsDescending ? menu.OrderByDescending(s => s.Price) : menu.OrderBy(s => s.Price);
+                }
+            }
+
+            var skipNumber = (query.PageNumber - 1) * query.PageSize;
+
+
+            return await menu.Skip(skipNumber).Take(query.PageSize).ToListAsync();
         }
 
         public async Task<Menu> CreateAsync(Menu menuModel) {

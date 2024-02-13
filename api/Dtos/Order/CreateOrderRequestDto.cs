@@ -9,7 +9,7 @@ namespace api.Dtos.Orders
 {
     public class CreateOrderRequestDto
     {
-        public int ClientId { get; set; }
+        public int? ClientId { get; set; }
         [Required]
         public DateTime Date { get; set; } = DateTime.Now;
         public decimal TotalPrice { get; set; } 
