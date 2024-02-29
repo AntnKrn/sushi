@@ -7,11 +7,13 @@ using api.Dtos.Menu;
 using api.Helpers.QueryObjects;
 using api.Interfaces;
 using api.Mappers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace api.Controllers
-{
+{        
+    [Authorize]
     [Route("api/menu")]
     [ApiController]
     public class MenuController : ControllerBase
@@ -24,6 +26,7 @@ namespace api.Controllers
             _context = context;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] MenuQueryObject query)
         {
@@ -31,7 +34,6 @@ namespace api.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             var menu = await _menuRepo.GetAllAsync(query);
             
             var menuDto = menu.Select(s => s.ToMenuDto());

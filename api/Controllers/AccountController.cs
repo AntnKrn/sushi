@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Dtos.Account;
 using api.Interfaces;
+using api.Mappers;
 using api.models;
 using api.Service;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Newtonsoft.Json;
 
 namespace api.Controllers
 {
@@ -20,11 +22,16 @@ namespace api.Controllers
         private readonly UserManager<User> _userManager;
         private readonly ITokenService _tokenService;
         private readonly SignInManager<User> _signInManager;
-        public AccountController(UserManager<User> userManager, ITokenService tokenService, SignInManager<User> signInManager)
+        private readonly IClientRepository _clientRepo;
+        public AccountController(UserManager<User> userManager, 
+            ITokenService tokenService, SignInManager<User> signInManager,
+            IClientRepository clientRepo
+        )
         {
             _userManager = userManager;
             _tokenService = tokenService;
             _signInManager = signInManager;
+            _clientRepo = clientRepo;
         }
 
         [HttpPost("login")]
@@ -48,12 +55,13 @@ namespace api.Controllers
             {
                 return Unauthorized("Username not found or a password incorrect");
             }
+            List<string> roles = new List<string>(await _userManager.GetRolesAsync(user));
 
             return Ok(
                 new NewUserDto {
                     UserName = user.UserName,
                     Email = user.Email,
-                    Token = _tokenService.CreateToken(user)
+                    Token = _tokenService.CreateToken(user, roles)
                 }
             );
         }
@@ -80,13 +88,16 @@ namespace api.Controllers
                 {
                     var roleResult = await _userManager.AddToRoleAsync(appUser, "User");
                     if(roleResult.Succeeded) 
+                    
                     {
+                        List<string> roles = new List<string>(await _userManager.GetRolesAsync(appUser));
+
                         return Ok(
                             new NewUserDto
                             {
                                 UserName = appUser.UserName,
                                 Email = appUser.Email,
-                                Token = _tokenService.CreateToken(appUser)
+                                Token = _tokenService.CreateToken(appUser, roles)
                             }
                         );
                     } else 
@@ -103,5 +114,23 @@ namespace api.Controllers
                 return StatusCode(500, ex);
             }
         }
+    
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetById([FromRoute] string id)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var account = await _clientRepo.GetByIdAsync(id);
+
+            if(account == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(account);
+        } 
     }
 }
