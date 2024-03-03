@@ -39,6 +39,7 @@ namespace api.Repository
         public async Task<Client> CreateAsync(Client clientModel)
         {
             await _context.Clients.AddAsync(clientModel);
+            
             await _context.SaveChangesAsync();
             return clientModel;
         }

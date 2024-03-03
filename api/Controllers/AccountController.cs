@@ -4,14 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Dtos.Account;
 using api.Interfaces;
-using api.Mappers;
 using api.models;
-using api.Service;
+using api.Mappers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Newtonsoft.Json;
+using api.Dtos.Client;
+
 
 namespace api.Controllers
 {
@@ -87,11 +86,16 @@ namespace api.Controllers
                 if(createUser.Succeeded)
                 {
                     var roleResult = await _userManager.AddToRoleAsync(appUser, "User");
+                    string userId = await _userManager.GetUserIdAsync(appUser);
+
+                    var CreateClient = new Client 
+                    {
+                        UserId = userId
+                    };
+                    await _clientRepo.CreateAsync(CreateClient.ToClientDtoFromCreateDto());
                     if(roleResult.Succeeded) 
-                    
                     {
                         List<string> roles = new List<string>(await _userManager.GetRolesAsync(appUser));
-
                         return Ok(
                             new NewUserDto
                             {
