@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using api.Dtos.Client;
+using api.Service;
+using System.Text.Json;
+using System.IdentityModel.Tokens.Jwt;
 
 
 namespace api.Controllers
@@ -31,6 +34,7 @@ namespace api.Controllers
             _tokenService = tokenService;
             _signInManager = signInManager;
             _clientRepo = clientRepo;
+            
         }
 
         [HttpPost("login")]
@@ -120,12 +124,22 @@ namespace api.Controllers
         }
     
         [HttpGet("{id:guid}")]
-        public async Task<IActionResult> GetById([FromRoute] string id)
+        public async Task<IActionResult> GetById([FromRoute] string id, [FromHeader] string Authorization)
         {
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            string jwt = Authorization.Remove(0, Authorization.IndexOf(' ') + 1);
+            JwtSecurityToken decodedJwt = _tokenService.DecodeJwt(jwt);
+
+            string IdUser = decodedJwt.Claims.First(claim => claim.Type == "unique_name").Value;
+/* 
+            Console.WriteLine("-----------------");
+            string json = JsonSerializer.Serialize(IdUser);
+            Console.WriteLine(json);
+            Console.WriteLine("=================="); */
+            
 
             var account = await _clientRepo.GetByIdAsync(id);
 

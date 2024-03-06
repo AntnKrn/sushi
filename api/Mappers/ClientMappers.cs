@@ -16,5 +16,16 @@ namespace api.Mappers
                 UserId = clientModel.UserId,
             };
         }
+
+        public static Client ToClientDto(this Client clientModel)
+        {
+            return new Client
+            {
+                Id = clientModel.Id,
+                Fullname = clientModel.Fullname,
+                PhoneNumber = clientModel.PhoneNumber,
+                Address = clientModel.Address
+            };
+        }
     }
 }

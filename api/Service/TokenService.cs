@@ -59,5 +59,12 @@ namespace api.Service
 
             return tokenHandler.WriteToken(token);
         }
+
+        public JwtSecurityToken DecodeJwt(string? token)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var decodedValue = handler.ReadJwtToken(token);
+            return decodedValue;
+        }
     }
 }

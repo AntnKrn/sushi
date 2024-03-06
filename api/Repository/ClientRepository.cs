@@ -19,9 +19,9 @@ namespace api.Repository
             _context = context;
         }
 
-        public async Task<Client?> UpdateAsync(int id, UpdateClientRequestDto clientDto)
+        public async Task<Client?> UpdateAsync(string userId, UpdateClientRequestDto clientDto)
         {
-            var existingClient = await _context.Clients.FirstOrDefaultAsync(x => x.Id == id);
+            var existingClient = await _context.Clients.FirstOrDefaultAsync(x => x.UserId == userId);
 
             if(existingClient == null)
             {

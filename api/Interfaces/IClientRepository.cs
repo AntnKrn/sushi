@@ -10,7 +10,7 @@ namespace api.Interfaces
     public interface IClientRepository
     {
         Task<Client> CreateAsync(Client clientModel);
-        Task<Client?> UpdateAsync(int id, UpdateClientRequestDto clientDto); 
+        Task<Client?> UpdateAsync(string userId, UpdateClientRequestDto clientDto); 
         Task<Client?> GetByIdAsync(string id);
     }
 }
