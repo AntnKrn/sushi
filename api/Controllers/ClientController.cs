@@ -53,7 +53,7 @@ namespace api.Controllers
                 return NotFound();
             }
 
-            return Ok(clientModel.ToClientDto());
+            return Ok(clientModel.ToUpdateClientDto());
         }
     }
 }

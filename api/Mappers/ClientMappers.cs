@@ -17,11 +17,10 @@ namespace api.Mappers
             };
         }
 
-        public static Client ToClientDto(this Client clientModel)
+        public static UpdateClientRequestDto ToUpdateClientDto(this Client clientModel)
         {
-            return new Client
+            return new UpdateClientRequestDto
             {
-                Id = clientModel.Id,
                 Fullname = clientModel.Fullname,
                 PhoneNumber = clientModel.PhoneNumber,
                 Address = clientModel.Address
