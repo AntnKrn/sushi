@@ -1,7 +1,12 @@
 import React from "react";
 
 import "./BusketPage.scss";
+import { Header } from "../../../widgets/header";
 
 export const BusketPage = () => {
-  return <div>BusketPage!</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };

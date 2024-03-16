@@ -1,7 +1,12 @@
 import React from "react";
 
+import { Header } from "../../../widgets/header";
 import "./ProductsPage.scss";
 
 export const ProductsPage = () => {
-  return <div>ProductsPage!</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
