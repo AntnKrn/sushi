@@ -11,49 +11,49 @@ export const Logo = () => {
       <defs>
         <linearGradient id="h">
           <stop offset="0" />
-          <stop stop-opacity="0" offset="1" />
+          <stop stopOpacity="0" offset="1" />
         </linearGradient>
         <linearGradient id="cd">
-          <stop stop-color="#b87a1f" offset="0" />
-          <stop stop-color="#e69425" offset=".5" />
-          <stop stop-color="#b87a1f" offset="1" />
+          <stop stopColor="#b87a1f" offset="0" />
+          <stop stopColor="#e69425" offset=".5" />
+          <stop stopColor="#b87a1f" offset="1" />
         </linearGradient>
         <linearGradient id="c">
-          <stop stop-color="#8cb598" offset="0" />
-          <stop stop-color="#1a4d22" offset="1" />
+          <stop stopColor="#8cb598" offset="0" />
+          <stop stopColor="#1a4d22" offset="1" />
         </linearGradient>
         <linearGradient id="d">
-          <stop stop-color="#fff" offset="0" />
-          <stop stop-color="#ff301c" offset="1" />
+          <stop stopColor="#fff" offset="0" />
+          <stop stopColor="#ff301c" offset="1" />
         </linearGradient>
         <linearGradient id="ce">
-          <stop stop-color="#1a1a1a" offset="0" />
-          <stop stop-color="#333" offset=".5" />
-          <stop stop-color="#1a1a1a" offset="1" />
+          <stop stopColor="#1a1a1a" offset="0" />
+          <stop stopColor="#333" offset=".5" />
+          <stop stopColor="#1a1a1a" offset="1" />
         </linearGradient>
         <linearGradient id="b">
-          <stop stop-color="#fff" offset="0" />
-          <stop stop-color="#fff" offset="1" />
+          <stop stopColor="#fff" offset="0" />
+          <stop stopColor="#fff" offset="1" />
         </linearGradient>
         <linearGradient id="f">
-          <stop stop-color="#fc653f" offset="0" />
-          <stop stop-color="#ff8b5f" offset="1" />
+          <stop stopColor="#fc653f" offset="0" />
+          <stop stopColor="#ff8b5f" offset="1" />
         </linearGradient>
         <linearGradient id="g">
-          <stop stop-color="#fbbe94" offset="0" />
-          <stop stop-color="#fc944d" offset="1" />
+          <stop stopColor="#fbbe94" offset="0" />
+          <stop stopColor="#fc944d" offset="1" />
         </linearGradient>
         <linearGradient id="j">
-          <stop stop-color="#fff" offset="0" />
-          <stop stop-color="#fff" stop-opacity="0" offset="1" />
+          <stop stopColor="#fff" offset="0" />
+          <stop stopColor="#fff" stopOpacity="0" offset="1" />
         </linearGradient>
         <linearGradient id="a">
-          <stop stop-color="#28663f" offset="0" />
-          <stop stop-color="#8bad60" offset="1" />
+          <stop stopColor="#28663f" offset="0" />
+          <stop stopColor="#8bad60" offset="1" />
         </linearGradient>
         <linearGradient id="e">
-          <stop stop-color="#8bad60" offset="0" />
-          <stop stop-color="#28663f" offset="1" />
+          <stop stopColor="#8bad60" offset="0" />
+          <stop stopColor="#28663f" offset="1" />
         </linearGradient>
         <linearGradient
           id="ep"
@@ -63,8 +63,8 @@ export const Logo = () => {
           y2="401.27"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#de8714" offset="0" />
-          <stop stop-color="#b16311" offset="1" />
+          <stop stopColor="#de8714" offset="0" />
+          <stop stopColor="#b16311" offset="1" />
         </linearGradient>
         <linearGradient
           id="en"
@@ -74,8 +74,8 @@ export const Logo = () => {
           y2="68.243"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#96ca6c" offset="0" />
-          <stop stop-color="#96ca6c" stop-opacity="0" offset="1" />
+          <stop stopColor="#96ca6c" offset="0" />
+          <stop stopColor="#96ca6c" stopOpacity="0" offset="1" />
         </linearGradient>
         <linearGradient
           id="ca"
@@ -85,8 +85,8 @@ export const Logo = () => {
           y2="429.4"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#fb8c33" offset="0" />
-          <stop stop-color="#db3534" offset="1" />
+          <stop stopColor="#fb8c33" offset="0" />
+          <stop stopColor="#db3534" offset="1" />
         </linearGradient>
         <linearGradient
           id="bz"
@@ -96,8 +96,8 @@ export const Logo = () => {
           y2="414.83"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#d02720" offset="0" />
-          <stop stop-color="#f78233" offset="1" />
+          <stop stopColor="#d02720" offset="0" />
+          <stop stopColor="#f78233" offset="1" />
         </linearGradient>
         <linearGradient
           id="es"
@@ -402,8 +402,8 @@ export const Logo = () => {
           gradientTransform="matrix(.85567 -.51752 .60518 1.0006 -146.58 869.22)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#520" offset="0" />
-          <stop stop-color="#b16311" stop-opacity="0" offset="1" />
+          <stop stopColor="#520" offset="0" />
+          <stop stopColor="#b16311" stopOpacity="0" offset="1" />
         </radialGradient>
         <radialGradient
           id="ag"
@@ -413,8 +413,8 @@ export const Logo = () => {
           gradientTransform="matrix(2.427 1.6765e-5 -8.3614e-6 1.2104 -1772.4 -249.78)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#3eab44" offset="0" />
-          <stop stop-color="#3b8f5e" offset="1" />
+          <stop stopColor="#3eab44" offset="0" />
+          <stop stopColor="#3b8f5e" offset="1" />
         </radialGradient>
         <radialGradient
           id="af"
@@ -424,8 +424,8 @@ export const Logo = () => {
           gradientTransform="matrix(2.879 0 0 1.5674 -2331.4 -660.21)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#f5e133" offset="0" />
-          <stop stop-color="#f5e133" stop-opacity="0" offset="1" />
+          <stop stopColor="#f5e133" offset="0" />
+          <stop stopColor="#f5e133" stopOpacity="0" offset="1" />
         </radialGradient>
         <radialGradient
           id="ae"
@@ -435,8 +435,8 @@ export const Logo = () => {
           gradientTransform="matrix(1.5726 .52484 -.15788 .47304 -621.48 -165.63)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#fdfaf7" offset="0" />
-          <stop stop-color="#e3a995" offset="1" />
+          <stop stopColor="#fdfaf7" offset="0" />
+          <stop stopColor="#e3a995" offset="1" />
         </radialGradient>
         <radialGradient
           id="bl"
@@ -446,8 +446,8 @@ export const Logo = () => {
           gradientTransform="matrix(.01825 .42493 -.6502 .02793 2104.4 -350.91)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#e6e6e6" offset="0" />
-          <stop stop-color="#fff" offset="1" />
+          <stop stopColor="#e6e6e6" offset="0" />
+          <stop stopColor="#fff" offset="1" />
         </radialGradient>
         <radialGradient
           id="bj"
@@ -457,8 +457,8 @@ export const Logo = () => {
           gradientTransform="matrix(.66237 0 0 .25126 901.8 184.48)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#f2b77e" offset="0" />
-          <stop stop-color="#f06d29" offset="1" />
+          <stop stopColor="#f2b77e" offset="0" />
+          <stop stopColor="#f06d29" offset="1" />
         </radialGradient>
         <radialGradient
           id="bi"
@@ -468,8 +468,8 @@ export const Logo = () => {
           gradientTransform="matrix(1 0 0 .61589 0 374.12)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#f0dcba" offset="0" />
-          <stop stop-color="#f0dcba" stop-opacity="0" offset="1" />
+          <stop stopColor="#f0dcba" offset="0" />
+          <stop stopColor="#f0dcba" stopOpacity="0" offset="1" />
         </radialGradient>
         <radialGradient
           id="dw"
