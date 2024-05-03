@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Logo } from "../../../shared/ui/logo";
+import { Logo } from "../../../shared/ui/icons/logo";
 import "./index.scss";
-import { MapPoint } from "../../../shared/ui/mapPoint";
-import { Clock } from "../../../shared/ui/clock";
-import { Email } from "../../../shared/ui/email";
-import { Phone } from "../../../shared/ui/phone";
+import { MapPoint } from "../../../shared/ui/icons/mapPoint";
+import { Clock } from "../../../shared/ui/icons/clock";
+import { Email } from "../../../shared/ui/icons/email";
+import { Phone } from "../../../shared/ui/icons/phone";
 
 export const Contacts = () => {
   return (
@@ -21,7 +21,9 @@ export const Contacts = () => {
         </h6>
       </div>
       <div className="contact item center">
-        <Logo />
+        <a href="/">
+          <Logo />
+        </a>
       </div>
       <div className="contact item side right">
         <h6>

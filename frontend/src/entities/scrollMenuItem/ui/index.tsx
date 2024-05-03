@@ -13,17 +13,16 @@ export const ScrollMenuItem = ({ image, name, index }: Props) => {
   return (
     <div className="scrollMenuItem" key={index}>
       {image}
-      <p
+      {/* <img src={img} width="65px" height="65px" /> */}
+      <h6
         className="scrollMenuItemName"
         style={{
           textAlign: "center",
-          margin: "0",
-          position: "sticky",
-          top: "0",
+          margin: 0,
         }}
       >
         {name}
-      </p>
+      </h6>
     </div>
   );
 };

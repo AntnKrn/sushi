@@ -1,0 +1,11 @@
+.menu-items-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#chosen-name {
+  color: rgb(108, 117, 125);
+  text-align: center;
+}

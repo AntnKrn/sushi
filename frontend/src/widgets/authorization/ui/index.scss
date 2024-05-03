@@ -1,0 +1,17 @@
+.auth-window {
+  background: rgba(190, 191, 195, 0.8);
+  width: 700px;
+  height: 500px;
+  position: fixed;
+  z-index: 100;
+  text-align: center;
+  top: 20%;
+  left: 27%;
+}
+.auth-inputs {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  margin: 0 auto;
+  //justify-content: center;
+}

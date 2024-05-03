@@ -3,27 +3,40 @@ import React from "react";
 import "./index.scss";
 import { ScrollMenuItem } from "../../../entities/scrollMenuItem";
 
-import img2 from "./scrollImg2.jpg";
-import img3 from "./scrollImg3.jpg";
-import img4 from "./scrollImg4.jpg";
+import img2 from "./sous.png";
+import img3 from "./supy.png";
+import img4 from "./rolly.png";
+import img5 from "./napitki.png";
+import img6 from "./sashimi.png";
+import img7 from "./sushi.png";
 
 export const ScrollMenu = () => {
-  const arrayImages: string[] = [img2, img3, img4, img2, img3, img4];
+  const arrayImages: Array<Array<string>> = [
+    [img2, "Соусы", "?Type=souces"],
+    [img3, "Супы", "?Type=soups"],
+    [img4, "Роллы", "?Type=rolls"],
+    [img5, "Напитки", "?Type=drinks"],
+    [img6, "Сашими", "?Type=sashimi"],
+    [img7, "Суши", "?Type=sushi"],
+  ];
 
   return (
     <div className="wrapper-scroll">
       <div className="scroll-menu">
         {arrayImages.map((el, index) => (
           <ScrollMenuItem
+            key={index}
             image={
-              <img
-                className="scroll-menu-img"
-                src={el}
-                width="65px"
-                height="65px"
-              />
+              <a href={el[2]}>
+                <img
+                  className="scroll-menu-img"
+                  src={el[0]}
+                  width="65px"
+                  height="65px"
+                />
+              </a>
             }
-            name="суши"
+            name={el[1]}
             index={index}
           />
         ))}

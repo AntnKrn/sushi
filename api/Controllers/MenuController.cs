@@ -13,7 +13,6 @@ using Newtonsoft.Json;
 
 namespace api.Controllers
 {        
-    [Authorize]
     [Route("api/menu")]
     [ApiController]
     public class MenuController : ControllerBase
@@ -60,6 +59,7 @@ namespace api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles=("Admin"))]
         public async Task<IActionResult> Create([FromBody] CreateMenuRequestDto menuDto)
         {
             if(!ModelState.IsValid)
@@ -76,6 +76,7 @@ namespace api.Controllers
 
         [HttpPut]
         [Route("{id:int}")]
+        [Authorize(Roles=("Admin"))]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateMenuRequestDto updateDto) 
         {
             if(!ModelState.IsValid)
@@ -95,7 +96,7 @@ namespace api.Controllers
 
         [HttpDelete]
         [Route("{id:int}")]
-
+        [Authorize(Roles=("Admin"))]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             if(!ModelState.IsValid)

@@ -14,3 +14,10 @@
     }
   }
 }
+
+@media screen and (max-width: 670px) {
+  .Contacts {
+    flex-direction: column;
+    text-align: center;
+  }
+}
