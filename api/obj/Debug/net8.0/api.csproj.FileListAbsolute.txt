@@ -275,7 +275,6 @@
 /Users/tonya/Desktop/sushi/api/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.api.props
 /Users/tonya/Desktop/sushi/api/obj/Debug/net8.0/staticwebassets.pack.json
 /Users/tonya/Desktop/sushi/api/obj/Debug/net8.0/scopedcss/bundle/api.styles.css
-/Users/tonya/Desktop/sushi/api/obj/Debug/net8.0/api.csproj.CopyComplete
 /Users/tonya/Desktop/sushi/api/obj/Debug/net8.0/api.dll
 /Users/tonya/Desktop/sushi/api/obj/Debug/net8.0/refint/api.dll
 /Users/tonya/Desktop/sushi/api/obj/Debug/net8.0/api.pdb
@@ -283,3 +282,4 @@
 /Users/tonya/Desktop/sushi/api/obj/Debug/net8.0/ref/api.dll
 /Users/tonya/Desktop/sushi/api/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/tonya/Desktop/sushi/api/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/tonya/Desktop/sushi/api/obj/Debug/net8.0/api.csproj.Up2Date

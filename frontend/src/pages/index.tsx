@@ -6,6 +6,7 @@ import { HomePage } from "./Home";
 import { Blog } from "./Blog/ui";
 import { AccountPage } from "./Account/ui";
 import { AuthorizationPage } from "./Authorization";
+import { DeliveryPage } from "./Delivery/ui";
 
 export const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/delivery",
-    element: <HomePage />,
+    element: <DeliveryPage />,
   },
   {
     path: "/products",

@@ -17,6 +17,7 @@ namespace api.Mappers
                 Name = menuModel.Name,
                 Ingredients = menuModel.Ingredients,
                 Type = menuModel.Type,
+                ImgUrl = menuModel.ImgUrl,
                 Price = menuModel.Price
             };
         }
@@ -27,6 +28,7 @@ namespace api.Mappers
             {
                 Name = menuDto.Name,
                 Ingredients = menuDto.Ingredients,
+                ImgUrl = menuDto.ImgUrl,
                 Type = menuDto.Type,
                 Price = menuDto.Price
             };

@@ -20,8 +20,11 @@ namespace api.Dtos.Menu
         [MaxLength(50, ErrorMessage = "Type must be less than 20 characters")]
         [MinLength(4, ErrorMessage = "Type must be more than 4 characters")]
         public string Type { get; set; } = string.Empty;
+        public string ImgUrl { get; set;} = string.Empty;
+
         [Required]
         [Range(1, 100, ErrorMessage = "Price must be between 1 and 100")]
         public decimal Price { get; set; }
+
     }
 }

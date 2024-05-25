@@ -1,17 +1,29 @@
 import React from "react";
 import "./index.scss";
-import img1 from "./img1.jpg";
+import { addItemToCart } from "../../../shared/store/store";
 
 interface MenuItemProp {
+  id: number;
   name: string;
   ingredients: string;
   price: number;
+  imgUrl: string;
 }
 
-export const MenuItem = ({ name, ingredients, price }: MenuItemProp) => {
+export const MenuItem = ({
+  id,
+  name,
+  ingredients,
+  price,
+  imgUrl,
+}: MenuItemProp) => {
+  const addMenuItemToCart = () => {
+    addItemToCart(id);
+    console.log(localStorage.getItem("cart"));
+  };
   return (
     <div className="menu-item">
-      <img src={img1} className="menu-item-img" />
+      <img src={imgUrl} alt={name} className="menu-item-img" />
       <h1>{name}</h1>
       <p style={{ textAlign: "left" }}>{ingredients}</p>
       <div
@@ -24,7 +36,7 @@ export const MenuItem = ({ name, ingredients, price }: MenuItemProp) => {
         }}
       >
         <span>{price} Р</span>
-        <button>+</button>
+        <button onClick={addMenuItemToCart}>+</button>
       </div>
     </div>
   );

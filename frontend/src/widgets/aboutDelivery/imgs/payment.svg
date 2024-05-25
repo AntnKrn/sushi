@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve" xmlnsSerif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(0.786773,0,0,0.786773,10.5283,13.5995)">
+        <g transform="matrix(0.141677,0,0,0.141677,3.80541,2.50527)">
+            <g transform="matrix(1.87098,0,0,1.87098,-202.624,-184.008)">
+                <text x="215px" y="199px" style="font-family:'AppleSymbols', 'Apple Symbols';font-size:96px;fill:rgb(255,0,0);">Pay</text>
+            </g>
+            <path d="M125,100C125,100 124.125,87.875 132,80C139.875,72.125 150,72 150,72C150,72 150.152,84.848 144,91C137.848,97.152 125,100 125,100Z" style="fill:rgb(255,0,0);"/>
+            <path d="M130,193C122.583,193 117.099,199 107,199C96.901,199 75,169.512 75,139C75,108.488 98.329,103 106,103C113.671,103 124.61,110 129,110C133.39,110 144.329,103 152,103C156.802,103 167.74,105.151 175.25,114.244C175.25,114.244 161,121.588 161,139C161,161.282 178.055,165.259 178.055,165.259C171.417,184.623 158.088,199 151,199C140.901,199 135.417,193 128,193" style="fill:rgb(255,0,0);stroke:rgb(255,0,0);stroke-width:8.97px;"/>
+            <g transform="matrix(0.964583,0,0,0.958333,7,8)">
+                <path d="M480,29.382C480,13.166 466.92,0 450.809,0L29.191,0C13.08,0 0,13.166 0,29.382L0,282.618C0,298.834 13.08,312 29.191,312L450.809,312C466.92,312 480,298.834 480,282.618L480,29.382Z" style="fill:none;stroke:rgb(255,0,0);stroke-width:27.21px;"/>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,23.9637,7)">
+            <g transform="matrix(0.897058,0,0,0.897058,0.187175,9.29635)">
+                <text x="38px" y="72px" style="font-family:'AppleSDGothicNeo-Regular', 'Apple SD Gothic Neo';font-size:23.547px;fill:rgb(255,0,0);">P<tspan x="50.763px " y="72px ">a</tspan>y</text>
+            </g>
+            <path d="M27.139,60.18C25.98,59.327 24.548,58.824 23,58.824C19.137,58.824 16,61.96 16,65.824C16,69.687 19.137,72.824 23,72.824C26.863,72.824 30,69.687 30,65.824L23,65.824" style="fill:none;stroke:rgb(251,3,3);stroke-width:3.71px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+            <g transform="matrix(0.136659,0,0,0.135773,5.98101,45.6431)">
+                <path d="M480,29.382C480,13.166 466.92,0 450.809,0L29.191,0C13.08,0 0,13.166 0,29.382L0,282.618C0,298.834 13.08,312 29.191,312L450.809,312C466.92,312 480,298.834 480,282.618L480,29.382Z" style="fill:none;stroke:rgb(255,0,0);stroke-width:27.21px;"/>
+            </g>
+        </g>
+    </g>
+</svg>

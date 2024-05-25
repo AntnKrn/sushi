@@ -2,3 +2,12 @@
   width: 65px;
   height: 65px;
 }
+
+@media screen and (max-width: 670px) {
+  .scrollMenuItem {
+    img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+}

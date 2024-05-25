@@ -11,6 +11,7 @@ namespace api.Dtos.Menu
         public string Name { get; set; } = string.Empty;
         public string Ingredients { get; set; } = string.Empty;
         public string Type { get; set; } = string.Empty;
+        public string ImgUrl { get; set;} = string.Empty;
         public decimal Price { get; set; }
     }
 }

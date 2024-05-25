@@ -1,0 +1,1 @@
+import { AboutDelivery } from "./ui";

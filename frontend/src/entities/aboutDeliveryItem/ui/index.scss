@@ -1,0 +1,24 @@
+.about-delivery-item {
+  text-align: center;
+  height: 209px;
+  width: 20%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  margin-inline: 19px;
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  img {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .about-delivery-item {
+    width: 100%;
+  }
+}

@@ -25,10 +25,12 @@ export const Menu = () => {
         {resultData?.map((item, index) => {
           return (
             <MenuItem
+              id={item.id}
               key={index}
               name={item.name}
               ingredients={item.ingredients}
               price={item.price}
+              imgUrl={item.imgUrl}
             />
           );
         })}

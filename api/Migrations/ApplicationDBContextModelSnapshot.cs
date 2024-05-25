@@ -51,19 +51,19 @@ namespace api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "6a3ee15e-2841-444e-a9d1-80a1ffcaebf4",
+                            Id = "37df55cf-7e9b-4c29-9658-5cbebb39e8f7",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "dd14d8f1-22eb-4d03-86a9-90c57330dcf8",
+                            Id = "c642292a-c091-493d-a296-3675bec2a3e4",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "ebc0b85b-971b-4f16-be38-2042caa0300b",
+                            Id = "f100782d-fdbb-4973-ac14-250124835786",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         });
@@ -212,6 +212,10 @@ namespace api.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Ingredients")
                         .IsRequired()
@@ -377,41 +381,11 @@ namespace api.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("WorkerInfoId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.HasIndex("WorkerInfoId");
-
                     b.ToTable("Workers");
-                });
-
-            modelBuilder.Entity("api.models.WorkerInfo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("WorkerInfos");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -506,13 +480,7 @@ namespace api.Migrations
                         .WithMany()
                         .HasForeignKey("UserId");
 
-                    b.HasOne("api.models.WorkerInfo", "WorkerInfo")
-                        .WithMany()
-                        .HasForeignKey("WorkerInfoId");
-
                     b.Navigation("User");
-
-                    b.Navigation("WorkerInfo");
                 });
 
             modelBuilder.Entity("api.models.Client", b =>

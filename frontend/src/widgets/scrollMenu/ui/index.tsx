@@ -12,12 +12,12 @@ import img7 from "./sushi.png";
 
 export const ScrollMenu = () => {
   const arrayImages: Array<Array<string>> = [
-    [img2, "Соусы", "?Type=souces"],
-    [img3, "Супы", "?Type=soups"],
-    [img4, "Роллы", "?Type=rolls"],
-    [img5, "Напитки", "?Type=drinks"],
-    [img6, "Сашими", "?Type=sashimi"],
-    [img7, "Суши", "?Type=sushi"],
+    [img2, "Соусы", "products/?Type=souces"],
+    [img3, "Супы", "products/?Type=soups"],
+    [img4, "Роллы", "products/?Type=rolls"],
+    [img5, "Напитки", "products/?Type=drinks"],
+    [img6, "Сашими", "products/?Type=sashimi"],
+    [img7, "Суши", "products/?Type=sushi"],
   ];
 
   return (
@@ -33,6 +33,7 @@ export const ScrollMenu = () => {
                   src={el[0]}
                   width="65px"
                   height="65px"
+                  alt={el[1]}
                 />
               </a>
             }

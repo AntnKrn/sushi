@@ -39,20 +39,20 @@ export const News = () => {
   return (
     <div style={{ position: "relative" }}>
       <div className="news-wrapper">
-        <img src={imagesUrls[imageIndex]} className="img-slider" />
+        <img src={imagesUrls[imageIndex]} alt={""} className="img-slider" />
         <button
           onClick={showPrevImage}
           className="img-slider-btn"
           style={{ left: 0 }}
         >
-          Prev
+          &lt;
         </button>
         <button
           onClick={showNextImage}
           className="img-slider-btn"
           style={{ right: 0 }}
         >
-          Next
+          &gt;
         </button>
       </div>
     </div>

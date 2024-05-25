@@ -1,0 +1,41 @@
+.about-delivery-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-delivery-items {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 80%;
+  height: 240px;
+  flex-wrap: wrap;
+}
+
+#about-delivery {
+  text-align: center;
+  color: #6c757d;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.delivery-benefit {
+  text-align: center;
+  color: #6c757d;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 990px) {
+  .about-delivery-items {
+    height: 600px;
+  }
+  .about-delivery-items:last-child {
+    height: 800px;
+  }
+}

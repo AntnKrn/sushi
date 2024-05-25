@@ -1,0 +1,1 @@
+import { AboutDeliveryItem } from "./ui";

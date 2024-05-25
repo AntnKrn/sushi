@@ -75,6 +75,7 @@ namespace api.Repository
             existingMenu.Name = menuDto.Name;
             existingMenu.Ingredients = menuDto.Ingredients;
             existingMenu.Type = menuDto.Type;
+            existingMenu.ImgUrl = menuDto.ImgUrl;
             existingMenu.Price = menuDto.Price;
 
             await _context.SaveChangesAsync();
