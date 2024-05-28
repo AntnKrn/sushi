@@ -1,6 +1,9 @@
 import React from "react";
 
-export const BusketIcon = () => {
+interface Prop {
+  count?: number;
+}
+export const BusketIcon = ({ count }: Prop) => {
   return (
     <svg
       version="1.1"
@@ -59,6 +62,7 @@ export const BusketIcon = () => {
           />
         </g>
       </g>
+
       <g></g>
       <g></g>
       <g></g>
@@ -74,6 +78,10 @@ export const BusketIcon = () => {
       <g></g>
       <g></g>
       <g></g>
+      <circle cx="17" cy="19" r="9" fill="red" opacity="1"></circle>
+      <text x="15" y="22" fill="white" fontSize="10">
+        {count}
+      </text>
     </svg>
   );
 };

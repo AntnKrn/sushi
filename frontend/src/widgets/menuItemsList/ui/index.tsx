@@ -1,8 +1,7 @@
 import React from "react";
 import { MenuItem } from "../../../entities/menuItem";
 import "./index.scss";
-import { IMenu, search } from "../../../shared/api";
-
+import { IMenu } from "../../../shared/interfaces/IMenu";
 interface IProps {
   data: IMenu[];
 }

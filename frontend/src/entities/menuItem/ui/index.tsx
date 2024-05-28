@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.scss";
-import { addItemToCart } from "../../../shared/store/store";
+import { useDispatch } from "react-redux";
+import { increment } from "../../../shared/store/counterCart/counterCart";
 
 interface MenuItemProp {
   id: number;
@@ -17,9 +18,9 @@ export const MenuItem = ({
   price,
   imgUrl,
 }: MenuItemProp) => {
+  const dispatch = useDispatch();
   const addMenuItemToCart = () => {
-    addItemToCart(id);
-    console.log(localStorage.getItem("cart"));
+    dispatch(increment(id));
   };
   return (
     <div className="menu-item">

@@ -3,7 +3,7 @@ import React from "react";
 import "./App.scss";
 import { RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { store } from "../shared/store/store";
 import { router } from "../pages";
 
 const App = () => {

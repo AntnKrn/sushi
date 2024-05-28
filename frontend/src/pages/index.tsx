@@ -4,9 +4,8 @@ import { ProductsPage } from "./Products";
 import { BusketPage } from "./Busket";
 import { HomePage } from "./Home";
 import { Blog } from "./Blog/ui";
-import { AccountPage } from "./Account/ui";
-import { AuthorizationPage } from "./Authorization";
 import { DeliveryPage } from "./Delivery/ui";
+import { ContactsPage } from "./Сontacts/ui";
 
 export const router = createBrowserRouter([
   {
@@ -30,11 +29,7 @@ export const router = createBrowserRouter([
     element: <Blog />,
   },
   {
-    path: "/account",
-    element: <AccountPage />,
-  },
-  {
-    path: "/authorization",
-    element: <AuthorizationPage />,
+    path: "/contacts",
+    element: <ContactsPage />,
   },
 ]);

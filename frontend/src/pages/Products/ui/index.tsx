@@ -4,18 +4,15 @@ import { Header } from "../../../widgets/header";
 import "./ProductsPage.scss";
 import { Footer } from "../../../widgets/footer";
 import { ScrollMenu } from "../../../widgets/scrollMenu";
-import { Menu } from "../../../widgets/menu";
-import { MenuList } from "../../../widgets/menuList/ui";
 import { MenuItemsList } from "../../../widgets/menuItemsList/ui";
-import { IMenu, search } from "../../../shared/api";
+import { IMenu } from "../../../shared/interfaces/IMenu";
+import { search } from "../../../shared/api/menu";
 
 export const ProductsPage = () => {
   const [response, setResponse] = useState<IMenu[]>([]);
-  const [type, setType] = useState<string>("");
 
   useEffect(() => {
     const param = window.location.search;
-    setType(param);
     (async function () {
       const result = await search(`menu${param}`);
       if (typeof result === "string") {

@@ -1,0 +1,49 @@
+#contacts-form-container {
+  #contacts-description {
+    text-align: center;
+    h3,
+    h6 {
+      color: #6c757d;
+    }
+
+    h6 {
+      margin: 30px 0 0 0;
+      font-size: 2.5rem;
+    }
+    h3 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+    }
+  }
+}
+
+form {
+  width: 445px;
+  margin: auto;
+  #btns-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    button {
+      width: 98px;
+      height: 34px;
+      font-size: 1rem;
+      border: 0px;
+      border-radius: 0.25rem;
+    }
+  }
+}
+@media screen and (max-width: 550px) {
+  form {
+    width: 80%;
+  }
+}

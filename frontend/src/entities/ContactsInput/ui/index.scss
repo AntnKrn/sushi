@@ -1,0 +1,16 @@
+input {
+  width: 423px;
+  height: 26px;
+  padding: 10px;
+  marginbottom: 7px;
+  color: #727376;
+  fontsize: 13px;
+  border: 1px solid #dcdcdc;
+  fontfamily: arial;
+}
+
+@media screen and (max-width: 550px) {
+  input {
+    width: 100%;
+  }
+}

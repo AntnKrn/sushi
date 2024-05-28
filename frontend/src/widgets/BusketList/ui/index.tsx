@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { CartItem } from "../../../entities/cartItem/ui";
+import { ICreateOrder } from "../../../shared/interfaces/ICreateOrder";
+import { post } from "../../../shared/api/orderAPI";
 
 interface ICartLocalStore {
   name: string;
@@ -13,13 +15,30 @@ interface ICartLocalStore {
 export const BusketList = () => {
   const [cartItems, setCartItems] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const sendOrderToServer = async () => {
+    const data: ICreateOrder = {
+      clientId: null,
+      date: new Date(),
+      totalPrice: 55,
+      status: "Готовится",
+      orderItems: [],
+    };
+    let localstorage = JSON.parse(window.localStorage.getItem("cart")!);
+    localstorage.forEach((el: any) => {
+      data.orderItems.push({
+        menuId: el.idItem,
+        quantity: el.quantity,
+        subSum: 1,
+      });
+    });
 
+    await post("/api/orders", data);
+  };
   useEffect(() => {
     const ids = JSON.parse(localStorage.getItem("cart")!) || null;
     const arrayLinks: { link: string; quantity: number; idItem: number }[] = [];
     ids.forEach((item: ICartLocalStore) => {
       let link: string = `http://localhost:5144/api/menu/${item.idItem}`;
-      console.log(item);
       arrayLinks.push({
         link: link,
         quantity: item.quantity,
@@ -74,8 +93,8 @@ export const BusketList = () => {
       </div>
       <p>Total price: 12 020P</p>
       <div id="cart-choice">
-        <p>Continue shopping</p>
-        <p>Checkout</p>
+        <a href="/products">Continue shopping</a>
+        <p onClick={() => sendOrderToServer()}>Checkout</p>
       </div>
     </div>
   );

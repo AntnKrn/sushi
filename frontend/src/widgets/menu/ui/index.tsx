@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { MenuItem } from "../../../entities/menuItem";
-import { IMenu, search } from "../../../shared/api";
+import { search } from "../../../shared/api/menu";
+import { IMenu } from "../../../shared/interfaces/IMenu";
 
 export const Menu = () => {
   const [resultData, setResultData] = useState<IMenu[]>();

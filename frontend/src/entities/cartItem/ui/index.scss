@@ -4,10 +4,18 @@
   width: 100%;
   height: 100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   img {
     margin-left: 20px;
+  }
+  #cart-item-name {
+    position: absolute;
+    left: 10rem;
+  }
+  #cart-item-price {
+    position: absolute;
+    right: 21rem;
   }
   input {
     text-align: center;
@@ -23,9 +31,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    right: 9rem;
   }
   #delete {
     margin-right: 20px;
     cursor: pointer;
+    position: absolute;
+    right: 1rem;
   }
 }

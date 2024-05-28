@@ -49,8 +49,8 @@ export const CartItem = ({ name, img, price, quantity, id }: Props) => {
       <div>
         <img src={img} alt="" width={"80px"} height={"80px"} />
       </div>
-      <p>{name}</p>
-      <p>{price}P</p>
+      <p id="cart-item-name">{name}</p>
+      <p id="cart-item-price">{price}P</p>
       <div className="counter">
         <input
           value={quantityState}
