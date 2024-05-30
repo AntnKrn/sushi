@@ -1,10 +1,7 @@
 import React from "react";
 import "./index.scss";
 
-interface IAccountProps {
-  onClickAccount: () => void;
-}
-export const Account = ({ onClickAccount }: IAccountProps) => {
+export const Account = () => {
   return (
     <svg
       width="800px"
@@ -14,7 +11,6 @@ export const Account = ({ onClickAccount }: IAccountProps) => {
       id="Layer_1"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={() => onClickAccount()}
     >
       <g id="profile_x2C__person">
         <g>

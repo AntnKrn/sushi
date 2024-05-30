@@ -7,10 +7,10 @@ interface IContactsInputProps {
 export const ContactsInput = ({ name }: IContactsInputProps) => {
   return (
     <>
-      <label style={{ marginBottom: "8px", color: "#212529", width: "100px" }}>
+      <label style={{ marginBottom: "3px", color: "#212529", width: "100px" }}>
         {name}
       </label>
-      <input />
+      <input className="contacts-input" />
     </>
   );
 };

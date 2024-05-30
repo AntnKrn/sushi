@@ -1,0 +1,1 @@
+import { AuthorizationPage } from "./ui";

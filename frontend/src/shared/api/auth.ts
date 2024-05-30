@@ -1,10 +1,10 @@
 import axios from "axios";
 
 import { IUserLoginResponse } from "../interfaces/IUser";
+import { setCookieByNameAndValue } from "../helpers/cookie.helper";
 
 export const login = async (login: string, password: string) => {
   try {
-    console.log(login, password);
     const response = await axios.post<IUserLoginResponse>(
       `http://localhost:5144/api/account/login`,
       {
@@ -12,16 +12,12 @@ export const login = async (login: string, password: string) => {
         password: password,
       }
     );
-    console.log(response.data.token);
-    document.cookie = "Bearer=" + response.data.token;
-    console.log(document.cookie);
+    setCookieByNameAndValue("Bearer", response.data.token);
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      console.log("error message: ", error.message);
-      return error.message;
+      throw Error(error.message);
     } else {
-      console.log("unexpected error");
-      return "an unexpected error";
+      throw Error("an unexpected error");
     }
   }
 };

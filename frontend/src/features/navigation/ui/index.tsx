@@ -8,13 +8,9 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../shared/store/store";
 
 export const Navigation = () => {
-  const [isClosedAuth, setIsClosedAuth] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const count = useSelector((state: RootState) => state.counter.value);
 
-  const closeOpenAuthWindow = () => {
-    setIsClosedAuth((prev) => !prev);
-  };
   const onClickMenuHandler = () => {
     setIsMenuOpen((prev) => !prev);
     const menu = document.getElementById("nav-menu");
@@ -48,17 +44,9 @@ export const Navigation = () => {
           </a>
         </li>
         <li id="account">
-          <div>
-            {document.cookie !== "" ? (
-              <a href="/account">
-                <Account onClickAccount={closeOpenAuthWindow} />
-              </a>
-            ) : isClosedAuth ? (
-              <Authorization onClose={closeOpenAuthWindow} />
-            ) : (
-              <Account onClickAccount={closeOpenAuthWindow} />
-            )}
-          </div>
+          <a href={document.cookie === "" ? "/authorization" : "/account"}>
+            <Account />
+          </a>
         </li>
       </ul>
 
